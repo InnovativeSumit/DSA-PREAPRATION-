@@ -1,0 +1,37 @@
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+        // O(N)
+        int n = nums.length;
+        // int[]result = new int[n];
+        // int low = 0;
+        // int high = n-1;
+        // int index = n-1;
+
+        // while(low<=high){
+        //     int leftsq = nums[low]*nums[low];
+        //     int rightsq = nums[high]*nums[high];
+
+        //     if(leftsq>rightsq){
+        //         result[index]=leftsq;
+        //         low++;
+        //     }
+
+        //     else{
+        //         result[index]=rightsq;
+        //         high--;
+        //     }
+        //     index--;
+        // }
+        // return result;
+        
+    // O(NlogN)
+        for(int i = 0 ; i< n ; i++){
+            if(nums[i] < 0){
+                nums[i] = -nums[i];
+            }
+            nums[i] = nums[i]*nums[i];
+        }
+     Arrays.sort(nums);
+     return nums; 
+    }
+}
